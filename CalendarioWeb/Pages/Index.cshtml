@@ -1,0 +1,226 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<section class="container-fluid row-edit mb-4" style="justify-content:center">
+    <button class="col-1 btn btn-outline-dark me-md-2 btn-month" style="margin-left:20%" onclick="btnPrevious_Click()">
+        <span class="" data-feather="arrow-left" style="width:24px; height:24px;"></span>
+    </button>
+    <p class="col-3 h4" id="lblMonthYear">Mes Ano</p>
+    <button class="col-1 btn-month btn btn-outline-dark" style="margin-right:20%" onclick="btnNext_Click()">
+        <span class="" data-feather="arrow-right" style="width:24px; height:24px;"></span>
+    </button>
+    <a class="btn btn-add" asp-area="" asp-page="/AddOrModify">Adicionar evento</a>
+</section>
+<span id="teste"></span>
+<section class="section-events u-xl-mode">
+    <div class="u-sheet clearfix container-buttons">
+        <table class="table-entity">
+            <tbody class="">
+                <tr class="table-tr" id="l1">
+                    <td class="table-cell" id="l1c1">
+                        <span class="leg-day">Dom</span>
+                    </td>
+                    <td class="table-cell" id="l1c2">
+                        <span class="leg-day">Seg</span>
+                    </td>
+                    <td class="table-cell" id="l1c3">
+                        <span class="leg-day">Ter</span>
+                    </td>
+                    <td class="table-cell" id="l1c4">
+                        <span class="leg-day">Qua</span>
+                    </td>
+                    <td class="table-cell"id="l1c5">
+                        <span class="leg-day">Qui</span>
+                    </td>
+                    <td class="table-cell" id="l1c6">
+                        <span class="leg-day">Sex</span>
+                    </td>
+                    <td class="table-cell" id="l1c7">
+                        <span class="leg-day">Sáb</span>
+                    </td>
+                </tr>
+                <tr class="table-tr" id="l2">
+                    <td class="table-cell" id="l2c1">                        
+                        <!-- o número 1 passado como parâmetro serve para identificar o botão que chamou o evento -->
+                        <button class="table-button" id="btn1" onclick="tableButton_Click(getInnerHTML(), 1)">1</button> 
+                        <i class="circle" id="event1-l2c1"></i>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn2" onclick="tableButton_Click(getInnerHTML(), 2)">2</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn3" onclick="tableButton_Click(getInnerHTML(), 3)">3</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn4" onclick="tableButton_Click(getInnerHTML(), 4)">4</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn5" onclick="tableButton_Click(getInnerHTML(), 5)">5</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn6" onclick="tableButton_Click(getInnerHTML(), 6)">6</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn7" onclick="tableButton_Click(getInnerHTML(), 7)">7</button>
+                    </td>
+                </tr>
+                <tr class="table-tr" id="l3">
+                    <td class="table-cell" id="l3c1">
+                        <button class="table-button" id="btn8" onclick="tableButton_Click(getInnerHTML(), 8)">8</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn9" onclick="tableButton_Click(getInnerHTML(), 9)">9</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn10" onclick="tableButton_Click(getInnerHTML(), 10)">10</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn11" onclick="tableButton_Click(getInnerHTML(), 11)">11</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn12" onclick="tableButton_Click(getInnerHTML(), 12)">12</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn13" onclick="tableButton_Click(getInnerHTML(), 13)">13</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn14" onclick="tableButton_Click(getInnerHTML(), 14)">14</button>
+                    </td>
+                </tr>
+                <tr class="table-tr">
+                    <td class="table-cell">
+                        <button class="table-button" id="btn15" onclick="tableButton_Click(getInnerHTML(), 15)">15</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn16" onclick="tableButton_Click(getInnerHTML(), 16)">16</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn17" onclick="tableButton_Click(getInnerHTML(), 17)">17</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn18" onclick="tableButton_Click(getInnerHTML(), 18)">18</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn19" onclick="tableButton_Click(getInnerHTML(), 19)">19</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn20" onclick="tableButton_Click(getInnerHTML(), 20)">20</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn21" onclick="tableButton_Click(getInnerHTML(), 21)">21</button>
+                    </td>
+                </tr>
+                <tr class="table-tr">
+                    <td class="table-cell">
+                        <button class="table-button" id="btn22" onclick="tableButton_Click(getInnerHTML(), 22)">22</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn23" onclick="tableButton_Click(getInnerHTML(), 23)">23</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn24" onclick="tableButton_Click(getInnerHTML(), 24)">24</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn25" onclick="tableButton_Click(getInnerHTML(), 25)">25</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn26" onclick="tableButton_Click(getInnerHTML(), 26)">26</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn27" onclick="tableButton_Click(getInnerHTML(), 27)">27</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn28" onclick="tableButton_Click(getInnerHTML(), 28)">28</button>
+                    </td>
+                </tr>
+                <tr class="table-tr">
+                    <td class="table-cell">
+                        <button class="table-button" id="btn29" onclick="tableButton_Click(getInnerHTML(), 29)">29</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn30" onclick="tableButton_Click(getInnerHTML(), 30)">30</button>
+                    </td>
+                    <td class="table-cell">                        
+                        <button class="table-button" id="btn31" onclick="tableButton_Click(getInnerHTML(), 31)">31</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn32" onclick="tableButton_Click(getInnerHTML(), 32)">32</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn33" onclick="tableButton_Click(getInnerHTML(), 33)">33</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn34" onclick="tableButton_Click(getInnerHTML(), 34)">34</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn35" onclick="tableButton_Click(getInnerHTML(), 35)">35</button>
+                    </td>
+                </tr>
+                <tr class="table-tr">
+                    <td class="table-cell">
+                        <button class="table-button" id="btn36" onclick="tableButton_Click(getInnerHTML(), 36)">36</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn37" onclick="tableButton_Click(getInnerHTML(), 37)">37</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn38" onclick="tableButton_Click(getInnerHTML(), 38)">38</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn39" onclick="tableButton_Click(getInnerHTML(), 39)">39</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn40" onclick="tableButton_Click(getInnerHTML(), 40)">40</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn41" onclick="tableButton_Click(getInnerHTML(), 41)">41</button>
+                    </td>
+                    <td class="table-cell">
+                        <button class="table-button" id="btn42" onclick="tableButton_Click(getInnerHTML(), 42)">42</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="container-events">
+
+            <div class="container-padrao" id="container-padrao">
+                <h4 class="nome_evento" id="nome_evento0">Nome do evento</h4>
+                <i class="icon-event">
+                    <button id="EditButton" class=" btn btn-outline-primary" onclick=""><i data-feather="edit" style="color:blue"></i></button>
+                </i>
+                <h5 class="data_evento" id="data_evento0">Data do evento</h5>
+
+                <h6 class="desc_evento" id="desc_evento0">
+                    Descricação do evento:&nbsp;Amostra de texto grande. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto grande. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.<br>
+                </h6>
+                <span class="icon-event">
+                    <button id="DeleteButton" class="btn btn-outline-danger" onclick="deleteEvent_Click(this)"><i data-feather="trash-2" style="color:red"></i></button>
+                </span>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+<!--
+<div class="container-events col text-center">
+    <p class="h6">13 Horas <input type="checkbox"></p>
+    <p class="h4"> Aula de Engenharia de Software</p>
+    <p class="h6"> Descrição do evento</p>
+</div>
+-->
+
+<p class="mt-5">Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+@section Scripts{
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+} 

@@ -1,0 +1,38 @@
+﻿@page
+@model AddOrModify
+@{
+    ViewData["Title"] = "Adicionar ou Modificar";
+}
+
+<section class="container container-add">
+    <main>
+        <h1>@ViewData["Title"]</h1>
+        <form>
+
+            <div class="mb-3 row">
+                <div class="mb-3 col">
+                    <label for="" class="form-label">Nome do evento</label>
+                    <input type="text" class="form-control" id="inputEventName" placeholder="Defina um nome para identificar o evento">
+                </div>
+                <div class="mb-3 col">
+                    <label for="" class="form-label">Data do evento</label>
+                    <input type="date" class="form-control" id="inputEventDate">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="mb-3 col">
+                    <label class="form-label" for="">Descrição do evento</label>
+                    <input type="text" class="mb-3 form-control" id="inputEventDesc" placeholder="Digite uma descrição para o evento">
+
+                    <label for="exampleColorInput" class="form-label">
+                        Escolha uma cor para identificar o evento:
+                        <input type="color" class="form-control form-control-color" id="colorInput" value="#fff" title="Escolha sua cor">
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </main>
+</section>
+
+
